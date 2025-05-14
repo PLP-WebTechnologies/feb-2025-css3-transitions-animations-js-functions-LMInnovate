@@ -1,0 +1,164 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body and Background */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    background-color: #0d1117;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  /* Glowing Animated Background */
+  .glow-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 20%, #0fffc1, transparent 25%),
+                radial-gradient(circle at 80% 30%, #f400ff, transparent 25%),
+                radial-gradient(circle at 50% 80%, #00c3ff, transparent 25%);
+    animation: pulseGlow 15s infinite alternate;
+    z-index: -1;
+  }
+  
+  @keyframes pulseGlow {
+    0% {
+      filter: blur(30px) brightness(1);
+      transform: scale(1);
+    }
+    100% {
+      filter: blur(60px) brightness(1.2);
+      transform: scale(1.05);
+    }
+  }
+  
+  /* Layout */
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    min-height: 100vh;
+  }
+  
+  /* Card */
+  .welcome-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    max-width: 500px;
+    margin-bottom: 40px;
+    transition: all 0.5s ease;
+  }
+  
+  .welcome-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Headings */
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .intro-text {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #cbd5e1;
+  }
+  
+  /* Input */
+  input[type="text"] {
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: none;
+    margin: 10px;
+    width: 70%;
+    max-width: 300px;
+    font-size: 1rem;
+    transition: 0.3s;
+  }
+  
+  input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #00ffd5;
+  }
+  
+  /* Buttons */
+  button {
+    padding: 12px 24px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+  }
+  
+  #saveBtn {
+    background-color: #00c3ff;
+    color: #fff;
+  }
+  
+  #animateBtn {
+    background-color: #ff00e0;
+    color: #fff;
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Animation Area */
+  .animation-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 150px;
+  }
+  
+  .box {
+    width: 100px;
+    height: 100px;
+    background: #00ffd5;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+    transition: all 0.5s ease;
+  }
+  
+  /* Custom Animation */
+  @keyframes bounce {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-80px); }
+    60% { transform: translateY(0); }
+    80% { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
+  }
+  
+  .animate {
+    animation: bounce 1s ease;
+  }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 20px;
+    color: #a1a1a1;
+  }
+  
